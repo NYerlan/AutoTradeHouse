@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { FaCar, FaTools, FaMoneyBillWave, FaBook } from 'react-icons/fa';
+import { FaCar, FaTools, FaMoneyBillWave } from 'react-icons/fa';
 import { MdCarRental } from "react-icons/md";
-import { BiCar } from 'react-icons/bi';
 import { GiAutoRepair } from 'react-icons/gi';
 import { BsBook } from "react-icons/bs";
 
