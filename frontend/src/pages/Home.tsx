@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FaCar, FaTools, FaMoneyBillWave, FaBook } from 'react-icons/fa';
+import { MdCarRental } from "react-icons/md";
 import { BiCar } from 'react-icons/bi';
 import { GiAutoRepair } from 'react-icons/gi';
+import { BsBook } from "react-icons/bs";
 
 // Add this mock data at the top of the file
 const featuredCars = [
@@ -33,54 +35,53 @@ const Home = () => {
               Browse thousands of cars or sell your vehicle with ease
             </p>
             {/* Submenu */}
-            <div className="flex flex-wrap gap-3 text-sm">
+            <div className="grid grid-cols-3 gap-2 text-sm md:flex md:flex-row md:gap-3">
               <Link 
                 to="/vehicles" 
-                className="flex items-center bg-white/10 px-3 py-1.5 rounded hover:bg-white/20 transition"
+                className="flex flex-col items-center justify-center bg-white/10 p-4 rounded hover:bg-white/20 transition md:flex-row md:items-center md:px-3 md:py-1.5 flex-shrink-0 whitespace-nowrap"
               >
-                <FaCar className="mr-1.5 text-base" />
-                Cars and Trucks
+                <FaCar className="text-2xl mb-2 md:mr-1.5 md:text-base md:mb-0" />
+                <span className="text-center md:text-left">Cars and Trucks</span>
               </Link>
               <Link 
                 to="/parts" 
-                className="flex items-center bg-white/10 px-3 py-1.5 rounded hover:bg-white/20 transition"
+                className="flex flex-col items-center justify-center bg-white/10 p-4 rounded hover:bg-white/20 transition md:flex-row md:items-center md:px-3 md:py-1.5 flex-shrink-0 whitespace-nowrap"
               >
-                <BiCar className="mr-1.5 text-base" />
-                Auto Parts
+                <GiAutoRepair className="text-2xl mb-2 md:mr-1.5 md:text-base md:mb-0" />
+                <span className="text-center md:text-left">Auto Parts</span>
               </Link>
               <Link 
                 to="/services" 
-                className="flex items-center bg-white/10 px-3 py-1.5 rounded hover:bg-white/20 transition"
+                className="flex flex-col items-center justify-center bg-white/10 p-4 rounded hover:bg-white/20 transition md:flex-row md:items-center md:px-3 md:py-1.5 flex-shrink-0 whitespace-nowrap"
               >
-                <GiAutoRepair className="mr-1.5 text-base" />
-                Repair and Services
+                <FaTools className="text-2xl mb-2 md:mr-1.5 md:text-base md:mb-0" />
+                <span className="text-center md:text-left">Repair and Services</span>
               </Link>
               <Link 
                 to="/rent" 
-                className="flex items-center bg-white/10 px-3 py-1.5 rounded hover:bg-white/20 transition"
+                className="flex flex-col items-center justify-center bg-white/10 p-4 rounded hover:bg-white/20 transition md:flex-row md:items-center md:px-3 md:py-1.5 flex-shrink-0 whitespace-nowrap"
               >
-                <FaTools className="mr-1.5 text-base" />
-                Rent
+                <MdCarRental className="text-2xl mb-2 md:mr-1.5 md:text-base md:mb-0" />
+                <span className="text-center md:text-left">Rental</span>
               </Link>
               <Link 
                 to="/financing" 
-                className="flex items-center bg-white/10 px-3 py-1.5 rounded hover:bg-white/20 transition"
+                className="flex flex-col items-center justify-center bg-white/10 p-4 rounded hover:bg-white/20 transition md:flex-row md:items-center md:px-3 md:py-1.5 flex-shrink-0 whitespace-nowrap"
               >
-                <FaMoneyBillWave className="mr-1.5 text-base" />
-                Financing
+                <FaMoneyBillWave className="text-2xl mb-2 md:mr-1.5 md:text-base md:mb-0" />
+                <span className="text-center md:text-left">Financing</span>
               </Link>
               <Link 
                 to="/blog" 
-                className="flex items-center bg-white/10 px-3 py-1.5 rounded hover:bg-white/20 transition"
+                className="flex flex-col items-center justify-center bg-white/10 p-4 rounded hover:bg-white/20 transition md:flex-row md:items-center md:px-3 md:py-1.5 flex-shrink-0 whitespace-nowrap"
               >
-                <FaBook className="mr-1.5 text-base" />
-                Reading Room
+                <BsBook className="text-2xl mb-2 md:mr-1.5 md:text-base md:mb-0" />
+                <span className="text-center md:text-left">Reading Room</span>
               </Link>
             </div>
           </div>
-        </div>
       </div>
-
+    </div>
       {/* Search Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="bg-white rounded-lg shadow-lg p-6 -mt-20">
