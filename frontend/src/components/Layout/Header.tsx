@@ -1,10 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCar, FaTruck } from 'react-icons/fa';
 import { AiFillCar } from 'react-icons/ai';
 import { RiMotorbikeFill } from 'react-icons/ri';
 import { BiSolidShip } from 'react-icons/bi';
 
 const Header = () => {
+  const navigate = useNavigate();
+
+  const handleSellCarClick = () => {
+    navigate('/login'); // Redirect to login page
+  };
+
+  const handleLoginClick = () => {
+    navigate('/login'); // Redirect to login page
+  };
+
   return (
     <header className="bg-primary text-white py-4 fixed w-full top-0 z-50">
       <div className="container mx-auto px-4">

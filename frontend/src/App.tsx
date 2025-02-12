@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import Home from './pages/Home';
-// import CarListing from './pages/CarListing';
+import CarListing from './pages/CarListing';
 // import CarDetails from './pages/CarDetails';
 // import SellCar from './pages/SellCar';
-// import Login from './pages/Auth/Login';
-// import Register from './pages/Auth/Register';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -15,11 +15,11 @@ function App() {
         <main className="pt-16"> {/* Add padding-top to account for fixed header */}
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/cars" element={<CarListing />} />
-            <Route path="/cars/:id" element={<CarDetails />} />
-            <Route path="/sell" element={<SellCar />} />
+            <Route path="/car-listing" element={<CarListing />} />
+            {/* <Route path="/cars/:id" element={<CarDetails />} /> */}
+            {/* <Route path="/sell" element={<SellCar />} /> */}
             <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} /> */}
+            <Route path="/register" element={<Register />} />
           </Routes>
         </main>
       </div>
