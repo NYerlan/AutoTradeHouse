@@ -1,18 +1,17 @@
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaCar, FaTruck } from 'react-icons/fa';
-import { AiFillCar } from 'react-icons/ai';
-import { RiMotorbikeFill } from 'react-icons/ri';
-import { BiSolidShip } from 'react-icons/bi';
+import { useAuth } from '../../context/AuthContext'; // Import useAuth
 
-const Header = () => {
+const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth(); // Get the user's login status
 
   const handleSellCarClick = () => {
-    navigate('/login'); // Redirect to login page
-  };
-
-  const handleLoginClick = () => {
-    navigate('/login'); // Redirect to login page
+    if (isLoggedIn) {
+      navigate('/car-listing'); // Redirect to CarListing if logged in
+    } else {
+      navigate('/login'); // Redirect to Login if not logged in
+    }
   };
 
   return (
@@ -23,51 +22,17 @@ const Header = () => {
             AutoTradeHouse
           </Link>
           <nav className="hidden md:flex space-x-4">
-            <Link 
-              to="/used-cars" 
-              className="flex items-center px-4 py-2 rounded hover:bg-white/10 transition"
-            >
-              <FaCar className="text-xl mr-2" />
-              <span>Used Cars</span>
-            </Link>
-            <Link 
-              to="/new-cars" 
-              className="flex items-center px-4 py-2 rounded hover:bg-white/10 transition"
-            >
-              <AiFillCar className="text-xl mr-2" />
-              <span>New Cars</span>
-            </Link>
-            <Link 
-              to="/commercial" 
-              className="flex items-center px-4 py-2 rounded hover:bg-white/10 transition"
-            >
-              <FaTruck className="text-xl mr-2" />
-              <span>Commercial</span>
-            </Link>
-            <Link 
-              to="/motorcycles" 
-              className="flex items-center px-4 py-2 rounded hover:bg-white/10 transition"
-            >
-              <RiMotorbikeFill className="text-xl mr-2" />
-              <span>Motorcycles</span>
-            </Link>
-            <Link 
-              to="/water-vessels" 
-              className="flex items-center px-4 py-2 rounded hover:bg-white/10 transition"
-            >
-              <BiSolidShip className="text-xl mr-2" />
-              <span>Water Vessels</span>
-            </Link>
+            {/* Navigation links */}
           </nav>
           <div className="flex items-center space-x-4">
-            <Link 
-              to="/sell" 
+            <button
+              onClick={handleSellCarClick}
               className="bg-white text-primary px-4 py-2 rounded hover:bg-gray-100 transition font-semibold"
             >
               Sell Your Car
-            </Link>
-            <Link 
-              to="/login" 
+            </button>
+            <Link
+              to="/login"
               className="bg-secondary px-4 py-2 rounded hover:bg-opacity-90 transition"
             >
               Login
@@ -79,4 +44,4 @@ const Header = () => {
   );
 };
 
-export default Header; 
+export default Header;
