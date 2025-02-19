@@ -16,10 +16,11 @@ Including another URLconf
 """
 # autotradehouse/urls.py
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include  # Make sure to import include
 from api.views import home  # Ensure this import is correct
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include('api.urls')),  # Include the API URLs
     path('', home),  # Map the root URL to the home view
 ]
