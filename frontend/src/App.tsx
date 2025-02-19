@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import CarListing from './pages/CarListing';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
+import Account from './pages/Auth/Account';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path="/car-listing" element={<CarListing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/account" element={<Account />} />
             </Routes>
           </main>
         </div>
